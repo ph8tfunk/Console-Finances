@@ -101,3 +101,14 @@ for (let index = 0; index < finances.length; index++) {
  // console.log(finances[index]);
   
 }
+
+
+//output
+
+console.log("Financial Analysis"); 
+console.log("-----------------");
+console.log("Total Months: " + numberMonths);
+console.log("Total: ");
+console.log("Average Change: ");
+console.log("Greatest Increase in Profits/Losses: ");
+console.log("Greatest Decrease in Profits/Losses: ");
