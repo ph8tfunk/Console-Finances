@@ -86,3 +86,18 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+var numberMonths = 0;
+var GreatestIncrease = 0;
+var GreatestDncrease = 0;
+
+numberMonths = finances.length;
+
+finances.forEach(element => {
+  console.log(finances[element]);
+});
+
+for (let index = 0; index < finances.length; index++) {
+ // console.log(finances[index]);
+  
+}
