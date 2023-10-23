@@ -90,47 +90,40 @@ var finances = [
 var numberMonths = 0;
 var greatestIncrease = 0;
 var greatestDecrease = 0;
-var aveChange =0;
-var total =0;
+var aveChange = 0;
+var total = 0;
 
 numberMonths = finances.length;
 
-
-
 for (let index = 0; index < finances.length; index++) {
- // console.log(finances[index]);
- console.log(finances[index][1]);
- total += finances[index][1];
- //console.log("total: "+total);
- 
-  
-//   aveChange += amountChange;
-// console.log("diff stored" + aveChange);
 
+  total += finances[index][1];
 
-if (index > 0 && index < finances.length){
-      console.log("A profit " + finances[index-1][1] + " B profit " + finances[index][1]);
-      amountChange = finances[index][1] - finances[index-1][1];
-      console.log(amountChange);
-      aveChange =+ amountChange;
+  if (index > 0 && index < finances.length){
+        
+        amountChange = finances[index][1] - finances[index-1][1];
+        aveChange += amountChange;
 
-      if (amountChange < greatestDecrease) {
-          greatestDecrease = amountChange; 
-      }
-      if (greatestIncrease < amountChange) {
-          greatestIncrease = amountChange; 
-      }
- }
-
+        if (amountChange < greatestDecrease) {
+            greatestDecrease = amountChange; 
+            //need to add month
+        }
+        if (greatestIncrease < amountChange) {
+            greatestIncrease = amountChange; 
+            //need to add month
+        }
+  }
 }
 
 aveChange = aveChange/(numberMonths-1);
+//need to round to nearest 100
+
 //output
 
 console.log("Financial Analysis"); 
 console.log("-----------------");
 console.log("Total Months: " + numberMonths);
-console.log("Total: " + total);
-console.log("Average Change: " + aveChange);
-console.log("Greatest Increase in Profits/Losses: " + greatestIncrease);
-console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
+console.log("Total: $" + total);
+console.log("Average Change: $" + aveChange);
+console.log("Greatest Increase in Profits/Losses: $" + greatestIncrease);
+console.log("Greatest Decrease in Profits/Losses: $" + greatestDecrease);
