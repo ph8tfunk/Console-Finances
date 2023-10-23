@@ -88,18 +88,21 @@ var finances = [
 ];
 
 var numberMonths = 0;
-var GreatestIncrease = 0;
-var GreatestDncrease = 0;
+var greatestIncrease = 0;
+var greatestDecrease = 0;
+var aveChange =0;
+var total =0;
 
 numberMonths = finances.length;
 
-finances.forEach(element => {
-  console.log(finances[element]);
-});
+// finances.forEach(first => monthYear, second => amount{
+//   console.log(finances[first, second]);
+// });
 
 for (let index = 0; index < finances.length; index++) {
  // console.log(finances[index]);
-  
+ console.log(finances[index][1]);
+ total += finances[index][1];
 }
 
 
@@ -108,7 +111,7 @@ for (let index = 0; index < finances.length; index++) {
 console.log("Financial Analysis"); 
 console.log("-----------------");
 console.log("Total Months: " + numberMonths);
-console.log("Total: ");
+console.log("Total: " + total);
 console.log("Average Change: ");
 console.log("Greatest Increase in Profits/Losses: ");
 console.log("Greatest Decrease in Profits/Losses: ");
