@@ -95,23 +95,42 @@ var total =0;
 
 numberMonths = finances.length;
 
-// finances.forEach(first => monthYear, second => amount{
-//   console.log(finances[first, second]);
-// });
+
 
 for (let index = 0; index < finances.length; index++) {
  // console.log(finances[index]);
  console.log(finances[index][1]);
  total += finances[index][1];
+ //console.log("total: "+total);
+ 
+  
+//   aveChange += amountChange;
+// console.log("diff stored" + aveChange);
+
+
+if (index > 0 && index < finances.length){
+      console.log("A profit " + finances[index-1][1] + " B profit " + finances[index][1]);
+      amountChange = finances[index][1] - finances[index-1][1];
+      console.log(amountChange);
+      aveChange =+ amountChange;
+
+      if (amountChange < greatestDecrease) {
+          greatestDecrease = amountChange; 
+      }
+      if (greatestIncrease < amountChange) {
+          greatestIncrease = amountChange; 
+      }
+ }
+
 }
 
-
+aveChange = aveChange/(numberMonths-1);
 //output
 
 console.log("Financial Analysis"); 
 console.log("-----------------");
 console.log("Total Months: " + numberMonths);
 console.log("Total: " + total);
-console.log("Average Change: ");
-console.log("Greatest Increase in Profits/Losses: ");
-console.log("Greatest Decrease in Profits/Losses: ");
+console.log("Average Change: " + aveChange);
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease);
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease);
