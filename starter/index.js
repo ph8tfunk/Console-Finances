@@ -98,6 +98,8 @@ numberMonths = finances.length;
 
 for (let index = 0; index < finances.length; index++) {
 
+    //loop to iterate the financial information
+
   total += finances[index][1];
 
   if (index > 0 && index < finances.length){
@@ -108,24 +110,22 @@ for (let index = 0; index < finances.length; index++) {
         if (amountChange < greatestDecrease[1]) {
             greatestDecrease[1] = amountChange; 
             greatestDecrease[0] = finances[index][0];
-            //need to add month
         }
         if (greatestIncrease[1] < amountChange) {
             greatestIncrease[1] = amountChange; 
             greatestIncrease[0] = finances[index][0];
-            //need to add month
         }
   }
 }
 
 aveChange = aveChange/(numberMonths-1);
 
-//output
+//output data
 
 console.log("Financial Analysis"); 
 console.log("-----------------");
 console.log("Total Months: " + numberMonths);
 console.log("Total: $" + total);
-console.log("Average Change: $" + aveChange.toFixed(2));
+console.log("Average Change: " + aveChange.toFixed(2));
 console.log("Greatest Increase in Profits/Losses: "+ greatestIncrease[0] + " $" + greatestIncrease[1]);
 console.log("Greatest Decrease in Profits/Losses: "+ greatestDecrease[0] + " $" + greatestDecrease[1]);
